@@ -19,10 +19,10 @@ public class UserDaoImp implements UserDao {
 
         if(connection != null){
             String sql = "select * from smbms_user where userCode = ? and userPassword = ?";
-            ArrayList<Object> list = new ArrayList<Object>();
-            list.add(userCode);
-            list.add(password);
-            rs = BaseDao.executeQuery(connection, ps, sql, list.toArray());
+            ArrayList<Object> params = new ArrayList<Object>();
+            params.add(userCode);
+            params.add(password);
+            rs = BaseDao.executeQuery(connection, ps, sql, params.toArray());
         }
 
         if(rs.next()){
@@ -45,5 +45,20 @@ public class UserDaoImp implements UserDao {
         BaseDao.closeAll(null, ps, rs);
 
         return user;
+    }
+
+    public int savePassword(Connection connection, String oldPassword, String newPassword) throws SQLException {
+        PreparedStatement preparedStatement = null;
+        int res = 0;
+        if(connection != null){
+            String sql = "update smbms_user set userPassword = ? where userPassword = ?";
+            ArrayList<Object> params = new ArrayList<Object>();
+            params.add(newPassword);
+            params.add(oldPassword);
+            res = BaseDao.executeUpdate(connection, preparedStatement, sql, params.toArray());
+        }
+        BaseDao.closeAll(null, preparedStatement, null);
+        return res;
+
     }
 }

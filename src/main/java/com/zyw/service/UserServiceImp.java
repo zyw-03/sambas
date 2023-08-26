@@ -34,4 +34,21 @@ public class UserServiceImp implements UserService{
         return loginUser;
     }
 
+    public int savePassword(String oldPassword, String newPassword) {
+        int res = 0;
+        Connection connection = null;
+
+
+        try {
+            connection = BaseDao.getConnection();
+            res = userDao.savePassword(connection, oldPassword, newPassword);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }finally {
+            BaseDao.closeAll(connection, null, null);
+        }
+
+        return res;
+
+    }
 }

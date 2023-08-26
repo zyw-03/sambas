@@ -22,8 +22,16 @@
         <servlet-name>logout</servlet-name>
         <url-pattern>/logout.do</url-pattern>
     </servlet-mapping>
-
-
+    
+    <servlet>
+        <servlet-name>userService</servlet-name>
+        <servlet-class>com.zyw.servlet.UserServiceServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>userService</servlet-name>
+        <url-pattern>/jsp/user.do</url-pattern>
+    </servlet-mapping>
 
 
     <!--设置欢迎页-->

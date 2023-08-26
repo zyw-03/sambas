@@ -9,4 +9,7 @@ public interface UserDao {
 
     // 根据userCode来查找用户
     public User getLoginUser(Connection connection,  String userCode, String password) throws SQLException;
+
+    //修改密码
+    public int savePassword(Connection connection, String oldPassword, String newPassword) throws SQLException;
 }
