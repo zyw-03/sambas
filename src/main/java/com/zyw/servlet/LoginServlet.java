@@ -1,9 +1,9 @@
 package com.zyw.servlet;
 
 import com.zyw.pojo.User;
-import com.zyw.service.UserService;
-import com.zyw.service.UserServiceImp;
-import com.zyw.utils.Contains;
+import com.zyw.service.user.UserService;
+import com.zyw.service.user.UserServiceImp;
+import com.zyw.utils.Constants;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +23,6 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        System.out.println("------->LoginServlet");
         String userCode = req.getParameter("userCode");
         String userPassword = (String) req.getParameter("userPassword");
 
@@ -37,7 +36,7 @@ public class LoginServlet extends HttpServlet {
 
         if(loginUser != null){
             HttpSession session = req.getSession();
-            session.setAttribute(Contains.USER_SESSION, loginUser);
+            session.setAttribute(Constants.USER_SESSION, loginUser);
             System.out.println(new Date(System.currentTimeMillis()).toLocaleString() + "  " + loginUser.getUserName() + "登录");
             resp.sendRedirect("/jsp/frame.jsp");
         }else{

@@ -50,8 +50,8 @@ public class BaseDao {
     // 处理sql的查询
     public static ResultSet executeQuery(Connection connection, PreparedStatement ps,  String sql, Object[] params) throws SQLException {
         ResultSet rs = null;
+        ps = connection.prepareStatement(sql);
         if(connection != null){
-            ps = connection.prepareStatement(sql);
             for(int i = 0; i < params.length; ++ i )    ps.setObject(i + 1, params[i]);
             rs = ps.executeQuery();
         }
@@ -62,9 +62,8 @@ public class BaseDao {
     // 增删改
     public static int executeUpdate(Connection connection, PreparedStatement ps,  String sql, Object[] params) throws SQLException {
         int flag = 0;
-
+        ps = connection.prepareStatement(sql);
         if(connection != null){
-            ps = connection.prepareStatement(sql);
             for(int i = 0; i < params.length; ++ i )    ps.setObject(i + 1, params[i]);
             flag = ps.executeUpdate();
         }
