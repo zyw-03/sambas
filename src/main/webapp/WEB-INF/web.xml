@@ -41,6 +41,15 @@
         <servlet-name>providerService</servlet-name>
         <url-pattern>/jsp/provider.do</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>billService</servlet-name>
+        <servlet-class>com.zyw.servlet.bill.BillServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>billService</servlet-name>
+        <url-pattern>/jsp/bill.do</url-pattern>
+    </servlet-mapping>
 
 
     <!--设置欢迎页-->

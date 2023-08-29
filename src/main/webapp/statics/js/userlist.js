@@ -1,6 +1,6 @@
 var userObj;
 
-//用户管理页面上点击删除按钮弹出删除框(userlist.jsp)
+用户管理页面上点击删除按钮弹出删除框(userlist.jsp)
 function deleteUser(obj){
 	$.ajax({
 		type:"GET",
@@ -9,6 +9,7 @@ function deleteUser(obj){
 		dataType:"json",
 		success:function(data){
 			if(data.delResult == "true"){//删除成功：移除删除行
+				alert("删除成功");
 				cancleBtn();
 				obj.parents("tr").remove();
 			}else if(data.delResult == "false"){//删除失败

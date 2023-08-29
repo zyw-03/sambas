@@ -49,7 +49,6 @@ public class UserServiceServlet extends HttpServlet {
         else if(method.equals("add")){
             try {
                 this.userAdd(req, resp);
-                System.out.println("addUser");
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
@@ -148,7 +147,6 @@ public class UserServiceServlet extends HttpServlet {
         String pageIndex = req.getParameter("pageIndex");
         int queryUserRole = 0;
 
-        System.out.println("user   " + pageIndex);
 
         //获取用户列表
         UserService userService = new UserServiceImp();
@@ -352,7 +350,6 @@ public class UserServiceServlet extends HttpServlet {
         UserService imp = new UserServiceImp();
 
         User user = imp.getUserByID(uid);
-        System.out.println(user);
 
         req.setAttribute("user", user);
 
