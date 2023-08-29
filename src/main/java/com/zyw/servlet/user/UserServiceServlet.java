@@ -1,4 +1,4 @@
-package com.zyw.servlet;
+package com.zyw.servlet.user;
 
 import com.alibaba.fastjson.JSONArray;
 import com.mysql.jdbc.StringUtils;
@@ -148,6 +148,8 @@ public class UserServiceServlet extends HttpServlet {
         String pageIndex = req.getParameter("pageIndex");
         int queryUserRole = 0;
 
+        System.out.println("user   " + pageIndex);
+
         //获取用户列表
         UserService userService = new UserServiceImp();
 
@@ -190,6 +192,8 @@ public class UserServiceServlet extends HttpServlet {
         } else if (currentPageNo > totalPageCount) {//当前页面大于最后一页，让它为最后一页就行
             currentPageNo = totalPageCount;
         }
+
+
 
         List<User> userList = null;
         userList = userService.getUserList(queryUserName, queryUserRole, currentPageNo, pageSize);

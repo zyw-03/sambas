@@ -1,4 +1,4 @@
-package com.zyw.servlet;
+package com.zyw.servlet.user;
 
 import com.zyw.pojo.User;
 import com.zyw.utils.Constants;

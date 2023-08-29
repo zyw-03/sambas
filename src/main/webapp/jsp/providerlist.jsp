@@ -76,7 +76,7 @@
         </c:forEach>
     </table>
 </div>
-</section>
+<session/>
 
 <!--点击删除按钮后弹出的页面-->
 <div class="zhezhao"></div>

@@ -7,7 +7,7 @@
          metadata-complete="true">
     <servlet>
         <servlet-name>login</servlet-name>
-        <servlet-class>com.zyw.servlet.LoginServlet</servlet-class>
+        <servlet-class>com.zyw.servlet.user.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>login</servlet-name>
@@ -16,7 +16,7 @@
 
     <servlet>
         <servlet-name>logout</servlet-name>
-        <servlet-class>com.zyw.servlet.LogoutServlet</servlet-class>
+        <servlet-class>com.zyw.servlet.user.LogoutServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>logout</servlet-name>
@@ -25,12 +25,21 @@
     
     <servlet>
         <servlet-name>userService</servlet-name>
-        <servlet-class>com.zyw.servlet.UserServiceServlet</servlet-class>
+        <servlet-class>com.zyw.servlet.user.UserServiceServlet</servlet-class>
     </servlet>
     
     <servlet-mapping>
         <servlet-name>userService</servlet-name>
         <url-pattern>/jsp/user.do</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>providerService</servlet-name>
+        <servlet-class>com.zyw.servlet.provider.providerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>providerService</servlet-name>
+        <url-pattern>/jsp/provider.do</url-pattern>
     </servlet-mapping>
 
 

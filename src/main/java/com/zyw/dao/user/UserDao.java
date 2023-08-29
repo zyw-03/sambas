@@ -1,5 +1,6 @@
 package com.zyw.dao.user;
 
+import com.zyw.pojo.Provider;
 import com.zyw.pojo.User;
 
 import java.sql.Connection;
@@ -34,5 +35,6 @@ public interface UserDao {
 
     //根据id删除用户
     public int delUser(Connection connection, int id) throws SQLException;
+
 
 }
